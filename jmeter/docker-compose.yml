@@ -1,0 +1,15 @@
+## jmeter docker compose file
+
+version: '3'
+
+services:
+  jmeter:
+    image: cherrycl/jmeter:5.1.0
+    networks:
+      - perf-network
+    volumes:
+      - ./script:/jmeter/script
+
+networks:
+  perf-network:
+    driver: "bridge"
